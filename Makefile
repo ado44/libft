@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amarna <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: amarna <amarna@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 16:13:59 by amarna            #+#    #+#              #
-#    Updated: 2022/05/24 15:14:46 by amarna           ###   ########.fr        #
+#    Updated: 2023/01/04 16:32:32 by amarna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,19 +50,27 @@ SRC = ft_atoi.c \
     ft_strtrim.c \
     ft_substr.c	\
     ft_toupper.c \
-    ft_tolower.c
-
-BONUS_SRC = ft_lstnew.c \
-	    ft_lstadd_front.c \
-	    ft_lstsize.c \
-	    ft_lstlast.c\
-	    ft_lstadd_back.c\
-	    ft_lstdelone.c \
-	    ft_lstclear.c \
-	    ft_lstiter.c \
-	    ft_lstmap.c \
-
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
+    ft_tolower.c \
+    ft_lstnew.c \
+    ft_lstadd_front.c \
+    ft_lstsize.c \
+    ft_lstlast.c\
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
+    get_next_line.c \
+    get_next_line_utils.c \
+    get_next_line_bonus.c \
+    get_next_line_utils_bonus.c \
+    ft_printf.c \
+    ft_putchar.c \
+    ft_putstr.c \
+    ft_putnbr.c \
+    ft_putnbr_u.c \
+    ft_putnbr_base_hex.c \
+    ft_putnbr_base_hex_ptr.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -74,11 +82,8 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) -c $(CFLAGS) $^
 
-bonus : $(OBJ) $(BONUS_OBJ)
-	ar rc $(NAME) $^
-
 clean:
-	rm -f $(OBJ)$(BONUS_OBJ)
+	rm -f $(OBJ)
 
 fclean:	clean
 	rm -f $(NAME)

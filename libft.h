@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amarna <amarna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:41:06 by amarna            #+#    #+#             */
-/*   Updated: 2022/05/24 16:35:07 by amarna           ###   ########.fr       */
+/*   Updated: 2023/01/11 14:55:16 by amarna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+# if defined (__APPLE__)
+#  define PTR_NULL "0x0"
+# elif __linux__
+#  define PTR_NULL "(nil)"
+# endif
 
 # include <stdio.h>
 # include <unistd.h>
@@ -20,12 +30,17 @@
 # include <ctype.h>
 # include <stddef.h>
 # include <stdint.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <fcntl.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}t_list;
+}					t_list;
+
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -70,5 +85,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		is_newline(char *s);
+char	*free_str_from_stat(char *line);
+char	*get_returned_line(char *line);
+char	*ft_join(char *reserve, char *buf);
+char	*get_next_line(int fd);
+char	*get_next_line_bonus(int fd);
+void	ft_putstr(char *s, int *len);
+void	ft_putnbr(int n, int *len);
+void	ft_putnbr_u(unsigned int n, int *len);
+void	ft_putnbr_base_hex(unsigned int n, char *base, int *len);
+void	ft_putchar(char c, int *len);
+void	ft_putnbr_base_hex_ptr(unsigned long n, char *base, int *len);
+int		ft_printf(const char *format, ...);
 
 #endif

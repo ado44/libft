@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: amarna <amarna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:06:49 by amarna            #+#    #+#             */
-/*   Updated: 2022/05/13 14:21:09 by amarna           ###   ########.fr       */
+/*   Updated: 2023/01/04 16:11:00 by amarna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-/*int main(){
-char test[] = "sualutilfait beau";
-unsigned int c = 7;
-size_t len = 6;
-printf("%s\n",ft_substr(test,c,len));
-}*/

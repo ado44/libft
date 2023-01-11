@@ -6,7 +6,7 @@
 /*   By: amarna <amarna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:18:16 by amarna            #+#    #+#             */
-/*   Updated: 2022/11/24 13:28:51 by amarna           ###   ########.fr       */
+/*   Updated: 2023/01/05 18:14:39 by amarna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,3 @@ char	**ft_split(char const *s, char c)
 	p_words[i] = NULL;
 	return (p_words);
 }
-
